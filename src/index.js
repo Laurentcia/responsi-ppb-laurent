@@ -5,7 +5,6 @@ import itemRoutes from "./routes/itemRoutes.js";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(express.json());
@@ -25,7 +24,5 @@ app.get("/", (req, res) => {
   });
 });
 
-// Jalankan server
-app.listen(PORT, () => {
-  console.log(`Server berjalan di http://localhost:${PORT}`);
-});
+// Export app ke Vercel
+export default app;
