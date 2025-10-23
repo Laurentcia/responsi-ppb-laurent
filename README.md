@@ -7,7 +7,7 @@ Proyek ini juga sudah di-deploy menggunakan Vercel sehingga dapat diakses secara
 
 ## Tujuan
 
-Memudahkan pengelolaan data cucian sepatu secara online, mulai dari pencatatan sepatu masuk hingga status penyelesaian.
+Menyediakan layanan API untuk mencatat, memantau, dan mengelola daftar sepatu yang sedang dicuci pada sebuah jasa laundry.
 
 ## Fitur Utama:
 
