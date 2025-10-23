@@ -17,70 +17,15 @@ Fitur Utama:
 -Menghapus data item
 
 Struktur Data 
-Contoh data:
+Tambah Data (POST /items)
+
+Request body:
 
 {
-  "id": 12,
-  "nama": "Cuci Sepatu Kulit",
-  "jenis": "Sepatu kulit",
-  "status": "proses",
-  "tanggalmasuk": "2025-10-22T10:00:00Z",
-  "harga": 30000,
-  "catatan": "Gunakan cairan khusus kulit"
-}
-
-4. Contoh Request dan Response
-GET /items
-
-Menampilkan semua data sepatu.
-Response:
-
-[
-  {
-    "id": 1,
-    "nama": "Sepatu Putih Nike",
-    "jenis": "Sneakers",
-    "status": "selesai",
-    "tanggalmasuk": "2025-10-20T08:30:00Z",
-    "harga": 25000,
-    "catatan": "Sudah dibersihkan dengan cairan khusus"
-  },
-  {
-    "id": 2,
-    "nama": "Sepatu Kulit Hitam",
-    "jenis": "Kulit",
-    "status": "proses",
-    "tanggalmasuk": "2025-10-21T09:00:00Z",
-    "harga": 30000,
-    "catatan": null
-  }
-]
-
-GET /items/:id
-
-Menampilkan data berdasarkan ID tertentu.
-Response:
-
-{
-  "id": 2,
-  "nama": "Sepatu Kulit Hitam",
-  "jenis": "Kulit",
-  "status": "proses",
-  "tanggalmasuk": "2025-10-21T09:00:00Z",
-  "harga": 30000
-}
-
-POST /items
-
-Menambahkan data cucian baru.
-Request Body:
-
-{
-  "nama": "Sepatu Anak",
-  "jenis": "Kanvas",
+  "nama": "Air Jordan 1",
+  "jenis": "Sneakers",
   "status": "menunggu",
-  "tanggalmasuk": "2025-10-23T07:45:00Z",
-  "harga": 15000
+  "tanggalmasuk": "2025-10-23"
 }
 
 
@@ -91,14 +36,48 @@ Response:
   "note": "Item baru berhasil dicatat! Pastikan data sudah sesuai."
 }
 
-PUT 
+Lihat Semua Data (GET /items)
 
-Memperbarui data cucian sepatu berdasarkan ID.
-Request Body:
+Response:
+
+[
+  {
+    "id": 1,
+    "nama": "Air Jordan 1",
+    "jenis": "Sneakers",
+    "status": "proses",
+    "tanggalmasuk": "2025-10-22"
+  },
+  {
+    "id": 2,
+    "nama": "Vans Old Skool",
+    "jenis": "Canvas",
+    "status": "selesai",
+    "tanggalmasuk": "2025-10-20"
+  }
+]
+
+Lihat Berdasarkan ID (GET /items/:id)
+
+Contoh:
+GET /items/2
+
+Response:
 
 {
+  "id": 2,
+  "nama": "Vans Old Skool",
+  "jenis": "Canvas",
   "status": "selesai",
-  "catatan": "Sudah dikeringkan dan siap diambil"
+  "tanggalmasuk": "2025-10-20"
+}
+
+Update Data (PUT /items/:id)
+
+Request body:
+
+{
+  "status": "selesai"
 }
 
 
@@ -109,7 +88,7 @@ Response:
   "note": "Perubahan tersimpan! Cek kembali status dan tanggalnya."
 }
 
-🟩 DELETE /items/:id
+ DELETE /items/:id
 
 Menghapus data cucian sepatu dari database.
 Response:
